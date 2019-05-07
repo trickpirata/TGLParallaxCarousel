@@ -121,7 +121,7 @@ open class TGLParallaxCarousel: UIView {
     func xibSetup() {
         containerView = loadViewFromNib()
         containerView.frame = bounds
-        containerView.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        containerView.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         addSubview(containerView)
     }
     
@@ -197,8 +197,8 @@ open class TGLParallaxCarousel: UIView {
             animationGroup.repeatCount = 1
             animationGroup.animations = [translationX, translationZ]
             animationGroup.isRemovedOnCompletion = false
-            animationGroup.fillMode = kCAFillModeRemoved
-            animationGroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            animationGroup.fillMode = CAMediaTimingFillMode.removed
+            animationGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
             item.layer.add(animationGroup, forKey: "myAnimation")
             
             var t = CATransform3DIdentity
