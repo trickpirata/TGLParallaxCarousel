@@ -197,8 +197,8 @@ open class TGLParallaxCarousel: UIView {
             animationGroup.repeatCount = 1
             animationGroup.animations = [translationX, translationZ]
             animationGroup.isRemovedOnCompletion = false
-            animationGroup.fillMode = CAMediaTimingFillMode.removed
-            animationGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+            animationGroup.fillMode = kCAFillModeRemoved
+            animationGroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
             item.layer.add(animationGroup, forKey: "myAnimation")
             
             var t = CATransform3DIdentity
